@@ -1,0 +1,37 @@
+### User guide
+
+Server Requirements
+Installation
+#### 1. Server Requirements
+See server requirements on doc codeigniter.
+
+
+#### 2. Installation
+If the vendor folder is not there, please run `composer install`.
+The next step is to import table to database.
+##### 2.1. With composer
+Create one new database. Then run `php spark migrate`.
+##### 2.2. Manually
+Create one new database. then import sql.sql
+
+Run `php spark serve` to run the web application
+
+the next step is to configure the .env file
+
+open .env file change app.baseURL according to CodeIgniter development server. Example http://localhost:8080
+
+The next step is to change the database configuration in the .env file to:
+
+`database.default.hostname = localhost`
+`database.default.database = # database name to create `
+`database.default.username = root #username`
+`database. default. password = #password`
+`database.default.DBDriver = MySQLi`
+`database. default. DBPrefix =`
+`database.default.port = 3306`
+
+last step change config App\Config\Email.php
+
+`public string $SMTPUser = ''; # email smtp gmail`
+
+`public string $SMTPPass = ''; # pass email smtp`

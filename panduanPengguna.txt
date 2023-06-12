@@ -1,0 +1,29 @@
+Jika folder vendor tidak ada silakan jalankan composer install.
+
+lankah selanjutnya untuk import table to database.
+2.1. dengan composer
+Buat satu database baru. Lalu jalankan php spark migrate.
+
+2.2. dengan manual
+Buat satu database baru. lalu import sql.sql 
+
+Jalankan php spark serve untuk menjalankan web apliakasi
+
+lankah selanjutnya configurasi file .env 
+
+buka file .env ubah app.baseURL sesuai CodeIgniter development server. Contoh http://localhost:8080
+
+lankah selanjutnya ubah configurasi database pada file .env menjaidi :
+database.default.hostname = localhost
+database.default.database = # nama databaSe yang dibuat
+database.default.username = root #username 
+database.default.password =  #password
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
+database.default.port = 3306
+
+langkah terakhir ubah config App\Config\Email.php 
+
+public string $SMTPUser = 'miftamasterapp@gmail.com';
+
+public string $SMTPPass = 'cywgqcpktxizpmbg';
